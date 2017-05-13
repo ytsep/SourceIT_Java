@@ -47,4 +47,13 @@ public class User {
         return !(lastName != null ? !lastName.equals(user.lastName) : user.lastName != null);
 
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "name='" + name + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", age=" + age +
+                '}';
+    }
 }
