@@ -9,7 +9,9 @@ public class SwitchValues {
         second = temp;*/
 
         /*Your implementation*/
+        first += second;
+        second = first - second;
+        first -= second;
 
-        System.out.println("First = " + first + " , second = " + second);
-    }
+        System.out.println("First = " + first + " , second = " + second);    }
 }
