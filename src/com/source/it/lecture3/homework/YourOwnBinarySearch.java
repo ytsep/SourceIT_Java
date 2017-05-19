@@ -12,28 +12,27 @@ public class YourOwnBinarySearch {
     private static int binarySearch(int[] array, int elem) {
         int result = -1;
         /* Your code here */
-        /*не работает*/
-        result = binarySearchTwo(array, 0, array.length, elem );
 
-        return result;
-    }
-
-    private static int binarySearchTwo (int[] array, int first, int end, int elem) {
-
-        while (end - first > 0) {
-
+        int first = 0;
+        int end = array.length - 1;
+        while (end - first > 1) {
             int middle = (end + first) / 2;
-
             if (array[middle] == elem) {
-                return middle;
+                result = middle;
+                break;
             } else if (array[middle] < elem) {
-               end = middle + 1;
-            } else {
                 first = middle;
+            } else {
+                end = middle;
             }
         }
-
-        return -1;
+        if (array[first] == elem) {
+            result = first;
+        }
+        if (array[end] == elem) {
+            result = end;
+        }
+        return result;
     }
 
 }
